@@ -39,5 +39,3 @@ components:
           items:
             type: string
             format: uri
-      required:
-      - '@type'
