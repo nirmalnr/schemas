@@ -170,7 +170,7 @@ address:
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/core/v2.0/",
+    "beckn": "https://schema.nfh.global/core/v2.0/",
     "{SchemaName}": {
       "@id": "beckn:{SchemaName}"
     },
@@ -182,7 +182,7 @@ address:
 
 ### 5.3 Constraints
 
-- The `beckn` prefix MUST resolve to `https://schema.beckn.io/core/v2.0/`.
+- The `beckn` prefix MUST resolve to `https://schema.nfh.global/core/v2.0/`.
 - Every attribute defined in `attributes.jsonschema.yaml` MUST have a corresponding entry in `context.jsonld`.
 - Attributes with `@type: @id` (i.e., enumeration values that are IRIs) MUST define their enumeration members in a nested `@context`.
 - Deprecated term aliases MUST be preserved with an `@comment` noting the deprecation and the replacement IRI.
@@ -225,7 +225,7 @@ address:
 ```json
 {
   "@context": {
-    "beckn": "https://schema.beckn.io/core/v2.0/",
+    "beckn": "https://schema.nfh.global/core/v2.0/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#"

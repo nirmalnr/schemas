@@ -106,7 +106,7 @@ A Major change:
 **Effect on versioning:**
 - Repository version: `MAJOR` increment (e.g., `v2.1.0` → `v3.0.0`)
 - Schema directory: a new `v3.0/` directory is created; `v2.x/` directories are retained and frozen
-- Namespace IRI: updated to `https://schema.beckn.io/core/v3.0/`
+- Namespace IRI: updated to `https://schema.nfh.global/core/v3.0/`
 - `CHANGELOG.md`: updated with the full breaking change log and migration instructions
 
 ---
@@ -165,7 +165,7 @@ When a new Major version is released (e.g., `v3.0/`):
 
 ### 5.2 IRI Retention
 
-IRIs assigned within a namespace version (e.g., `https://schema.beckn.io/core/v2.0/Address`) MUST be considered permanent. Once published, an IRI MUST NOT be reassigned to a different concept.
+IRIs assigned within a namespace version (e.g., `https://schema.nfh.global/core/v2.0/Address`) MUST be considered permanent. Once published, an IRI MUST NOT be reassigned to a different concept.
 
 ---
 

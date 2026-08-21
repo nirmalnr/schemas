@@ -154,7 +154,7 @@ For a new schema, all IRIs will be new — they are minted by placing the attrib
 {
   "@context": {
     "@version": 1.1,
-    "beckn": "https://schema.beckn.io/core/v2.0/",
+    "beckn": "https://schema.nfh.global/core/v2.0/",
     "SupportRequest": {
       "@id": "beckn:SupportRequest"
     },
@@ -173,7 +173,7 @@ Declare the schema class and all properties as RDF resources.
 ```json
 {
   "@context": {
-    "beckn": "https://schema.beckn.io/core/v2.0/",
+    "beckn": "https://schema.nfh.global/core/v2.0/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#"
   },

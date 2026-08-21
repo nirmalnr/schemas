@@ -44,7 +44,7 @@ The Beckn Protocol v2 schema model is organised into three tiers, each with a di
 │  Repository: beckn/common_schema                                │
 │  Contains: Domain-agnostic schemas (Address, Catalog, Item,     │
 │            Fulfillment, Contract, Payment, etc.)                │
-│  Namespace: https://schema.beckn.io/core/v2.0/                  │
+│  Namespace: https://schema.nfh.global/core/v2.0/                  │
 └────────────────────────┬────────────────────────────────────────┘
                          │ extended by
 ┌────────────────────────▼────────────────────────────────────────┐
@@ -111,7 +111,7 @@ JSON-LD (JSON for Linking Data) allows the schemas in this library to be used in
 1. **As plain JSON** — any JSON document that conforms to the OpenAPI attribute definitions is valid. JSON-LD awareness is not required for basic protocol use.
 2. **As Linked Data** — when a JSON-LD context is referenced, every term in the document maps to a globally unique IRI. This enables semantic interoperability, RDF graph construction, and ontology alignment.
 
-The `beckn:` namespace (`https://schema.beckn.io/core/v2.0/`) is the canonical IRI base for all Beckn core schema terms.
+The `beckn:` namespace (`https://schema.nfh.global/core/v2.0/`) is the canonical IRI base for all Beckn core schema terms.
 
 ---
 

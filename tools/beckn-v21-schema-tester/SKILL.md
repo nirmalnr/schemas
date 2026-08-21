@@ -139,8 +139,8 @@ one level deeper into `{domain}-common/CodedValue/`.
 Fix: replace the nested `x-jsonld` with a flat `x-jsonld-id` property.
 
 **L2 — Wrong `@import` value:** `context.jsonld` imports
-`"https://schema.beckn.io/core/v2/context.jsonld"` (v2) instead of
-`"https://schema.beckn.io/core/v2/context.jsonld#generalised"` (v2.1). Fix: update the
+`"https://schema.nfh.global/core/v2/context.jsonld"` (v2) instead of
+`"https://schema.nfh.global/core/v2/context.jsonld#generalised"` (v2.1). Fix: update the
 `@import` value in `context.jsonld`.
 
 **L2 — Orphan properties in example:** An example payload's attribute block contains a

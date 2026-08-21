@@ -1,10 +1,10 @@
 # [Insert SchemaName]
-A schema.beckn.io TODO( Select Type / Property based on the nature of the schema)
+A schema.nfh.global TODO( Select Type / Property based on the nature of the schema)
 
 TODO(Insert description here taken from 4_Beckn_Mobility_Concepts.md)
 
 **Canonical IRI :** mobility:[Insert SchemaName]
-**Canonical URL:** https://schema.beckn.io/mobility/[Insert SchemaName]
+**Canonical URL:** https://schema.nfh.global/mobility/[Insert SchemaName]
 **Related Classes:**
 
 | Type | Relationship | Strength |
@@ -16,8 +16,8 @@ TODO(Insert description here taken from 4_Beckn_Mobility_Concepts.md)
 >
 > | Type | Relationship | Strength |
 > |------|--------------|----------|
-> | [gtfs:SchemaName](https://schema.beckn.io/mobility/gtfs/TODO:SchemaName) | owl:equivalentTo | Strong Equivalence — Both classes represent exactly the same real-world concept with identical semantics |
-> | [netex:SchemaName](https://schema.beckn.io/mobility/netex/TODO:SchemaName) | rdfs:subClassOf | Moderate Equivalence — This class is a specialization of the referenced class, inheriting its properties but with additional constraints |
+> | [gtfs:SchemaName](https://schema.nfh.global/mobility/gtfs/TODO:SchemaName) | owl:equivalentTo | Strong Equivalence — Both classes represent exactly the same real-world concept with identical semantics |
+> | [netex:SchemaName](https://schema.nfh.global/mobility/netex/TODO:SchemaName) | rdfs:subClassOf | Moderate Equivalence — This class is a specialization of the referenced class, inheriting its properties but with additional constraints |
 
 ## Open Issues
 [Open issues](https://github.com/beckn/mobility/issues)

@@ -98,7 +98,7 @@ Represents the discharge of a Consideration. Key fields:
 
 The canonical `@import` target for all v2.1 generalised schemas:
 ```
-https://schema.beckn.io/core/v2/context.jsonld#generalised
+https://schema.nfh.global/core/v2/context.jsonld#generalised
 ```
 The base URI stays at `v2` for backward compatibility. The `#generalised` fragment is an
 opaque discriminator — it is never dereferenced by JSON-LD processors.

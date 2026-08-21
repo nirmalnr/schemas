@@ -34,13 +34,13 @@ Before generating **anything**, fetch and parse the v2.1 core spec:
 |------|-----------|
 | Core API spec (v2.1 draft) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/api/beckn.yaml` (or user-uploaded `beckn-generalise-draft.yaml`) |
 | Core Schemas (attributes.jsonschema.yaml) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/schema/core/v2/attributes.jsonschema.yaml` |
-| Core context.jsonld | `https://schema.beckn.io/core/v2/context.jsonld` |
-| Core vocab.jsonld | `https://schema.beckn.io/core/v2/vocab.jsonld` |
+| Core context.jsonld | `https://schema.nfh.global/core/v2/context.jsonld` |
+| Core vocab.jsonld | `https://schema.nfh.global/core/v2/vocab.jsonld` |
 
 **Generalised context discriminator (canonical):**
 All v2.1 generalised schema files use this `@import` target:
 ```
-https://schema.beckn.io/core/v2/context.jsonld#generalised
+https://schema.nfh.global/core/v2/context.jsonld#generalised
 ```
 This is an opaque IRI identifier — the `#generalised` fragment signals the generalised
 semantic profile. Do NOT attempt to dereference the fragment.
@@ -143,7 +143,7 @@ Apply the canonical renames from `references/v2-to-v2.1-mapping.md`:
 
 For each schema, produce a v2.1 draft by:
 1. Renaming the container in `x-beckn-container`
-2. Updating `@import` to `https://schema.beckn.io/core/v2/context.jsonld#generalised`
+2. Updating `@import` to `https://schema.nfh.global/core/v2/context.jsonld#generalised`
 3. Updating the schema name — use `{Domain}{Container}` pattern without "Core" or "Attributes"
    (e.g., `DriverJobItemAttributes` → `DriverJobResource`)
 4. Updating the per-schema prefix abbreviation in `context.jsonld` to match the new name
@@ -412,25 +412,25 @@ All files must be **complete and production-ready**. See file specs below.
 - Vocab class aliases MUST be string form: `"ClassName": "prefix:ClassName"` (not dict form `{"@id": "..."}`)
 - **Import generalised core context:**
   ```json
-  "@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised"
+  "@import": "https://schema.nfh.global/core/v2/context.jsonld#generalised"
   ```
 - **Namespace convention** (collision-safe, mandatory):
   - `"schema": "https://schema.org/"` — for schema.org terms
-  - `"beckn": "https://schema.beckn.io/"` — for core Beckn protocol terms only
-  - `"<abbr>": "https://schema.beckn.io/{SchemaName}#"` — one short prefix per top-level
-    schema using `#` fragment separator. Example: `"djr": "https://schema.beckn.io/DriverJobResource#"`
+  - `"beckn": "https://schema.nfh.global/"` — for core Beckn protocol terms only
+  - `"<abbr>": "https://schema.nfh.global/{SchemaName}#"` — one short prefix per top-level
+    schema using `#` fragment separator. Example: `"djr": "https://schema.nfh.global/DriverJobResource#"`
   - Never use a single flat domain prefix shared across multiple schemas
 
 ### `vocab.jsonld`
 - Enumerations **only** — no structural schema
 - Human-readable labels (`rdfs:label`) and comments (`rdfs:comment`) for each enum term
-- Import core vocab: `"@import": "https://schema.beckn.io/core/v2/vocab.jsonld"`
+- Import core vocab: `"@import": "https://schema.nfh.global/core/v2/vocab.jsonld"`
 - Use the same per-schema prefix (`<abbr>:`) for all enum class and instance IRIs
 
 ### `profile.json`
 ```jsonc
 {
-  "id": "https://schema.beckn.io/{SchemaName}/v1",
+  "id": "https://schema.nfh.global/{SchemaName}/v1",
   "name": "...",
   "version": "{folder-version}.0",
   "protocol_version": "2.0",
@@ -514,15 +514,15 @@ Body must contain:
 {
   "context": {
     "action": "on_discover",
-    "schema_context": ["https://schema.beckn.io/{SchemaName}/context.jsonld"]
+    "schema_context": ["https://schema.nfh.global/{SchemaName}/context.jsonld"]
   },
   "message": {
     "catalogs": [{
-      "@context": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+      "@context": "https://schema.nfh.global/core/v2/context.jsonld#generalised",
       "@type": "beckn:Catalog",
       "beckn:id": "...",
       "beckn:resources": [{
-        "@context": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+        "@context": "https://schema.nfh.global/core/v2/context.jsonld#generalised",
         "@type": "beckn:Resource",
         "beckn:id": "...",
         "beckn:descriptor": { ... },
@@ -540,7 +540,7 @@ Body must contain:
   "context": { "action": "on_confirm", "schema_context": [...] },
   "message": {
     "contract": {
-      "@context": "https://schema.beckn.io/core/v2/context.jsonld#generalised",
+      "@context": "https://schema.nfh.global/core/v2/context.jsonld#generalised",
       "@type": "beckn:Contract",
       "beckn:id": "...",
       "beckn:status": "CONFIRMED",
@@ -603,10 +603,10 @@ After generating the full schema pack and passing all tests, provide:
 | Per-schema versioned folder | Each schema gets `{SchemaName}/v2.1/` — never a single shared `v2.1/` directory |
 | Concise schema names | Use `{Domain}{Container}` (e.g., `RetailResource`) — no "Core" or "Attributes" suffix |
 | One folder per top-level schema | Each container-attached schema gets its own folder with 7 files |
-| Per-schema namespace prefix | Use `"<abbr>": "https://schema.beckn.io/{SchemaName}#"` — never a flat domain prefix |
+| Per-schema namespace prefix | Use `"<abbr>": "https://schema.nfh.global/{SchemaName}#"` — never a flat domain prefix |
 | Flat `x-jsonld-id` annotations | Use `x-jsonld-id: "prefix:prop"` — never the nested form `x-jsonld: { "@id": "..." }` |
 | String-form vocab aliases | In `context.jsonld`, class aliases must be strings `"Class": "prefix:Class"` — not dicts |
-| Generalised context import | Always use `"@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised"` |
+| Generalised context import | Always use `"@import": "https://schema.nfh.global/core/v2/context.jsonld#generalised"` |
 | HTML templates mandatory | renderer.json must include both `html` and `html_detail` Handlebars templates |
 | Migration is never purely mechanical | v2→v2.1 must include a paradigm fit review (STEP 1-M Phase C) before generating files |
 | Migration approval gate | Never generate files in migration mode without presenting the migration summary and receiving user approval |

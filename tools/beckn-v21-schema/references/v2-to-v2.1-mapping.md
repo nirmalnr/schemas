@@ -70,7 +70,7 @@ Use this when the user provides a v2 schema pack and wants to migrate to v2.1 ge
 
 | v2 | v2.1 | Notes |
 |----|------|-------|
-| `"@import": "https://schema.beckn.io/core/v2/context.jsonld"` | `"@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised"` | Fragment discriminator added |
+| `"@import": "https://schema.nfh.global/core/v2/context.jsonld"` | `"@import": "https://schema.nfh.global/core/v2/context.jsonld#generalised"` | Fragment discriminator added |
 
 ## profile.json Changes
 
