@@ -166,7 +166,7 @@ def build_context_document(source: Dict[str, Any]) -> Dict[str, Any]:
     schema_name = source["schema_name"]
     version = source["version"]
     properties: Dict[str, str] = source["properties"]
-    beckn_context_url = f"https://schema.beckn.io/LinkedData/v{version}/context.jsonld"
+    beckn_context_url = f"https://schema.nfh.global/LinkedData/v{version}/context.jsonld"
 
     context: Dict[str, Any] = {
         "@version": 1.1,
@@ -185,7 +185,7 @@ def build_vocab_document(source: Dict[str, Any]) -> Dict[str, Any]:
     version = source["version"]
     description = source["description"]
     properties: Dict[str, str] = source["properties"]
-    beckn_context_url = f"https://schema.beckn.io/LinkedData/v{version}/context.jsonld"
+    beckn_context_url = f"https://schema.nfh.global/LinkedData/v{version}/context.jsonld"
 
     context: Dict[str, Any] = {
         "beckn": beckn_context_url,

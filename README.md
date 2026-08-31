@@ -44,7 +44,7 @@ Beckn Protocol v2.0 solves this with a **three-tier schema model** that separate
 │  Contains: All domain-agnostic schemas (Address, Catalog, Item,     │
 │            Fulfillment, Contract, Intent, Provider, etc.)           │
 │  Versioned: independently, per-schema                               │
-│  Namespace: https://schema.beckn.io/core/v2.0/                      │
+│  Namespace: https://schema.nfh.global/core/v2.0/                      │
 └──────────────────────────────┬──────────────────────────────────────┘
                                │  extended by
 ┌──────────────────────────────▼──────────────────────────────────────┐
@@ -52,7 +52,7 @@ Beckn Protocol v2.0 solves this with a **three-tier schema model** that separate
 │  Repository: one per vertical (e.g., beckn/mobility, beckn/health)  │
 │  Contains: Domain-specific schemas that extend Tier 2 types         │
 │  Versioned: independently, per domain pack                          │
-│  Namespace: defined per domain (e.g., https://schema.beckn.io/mob/) │
+│  Namespace: defined per domain (e.g., https://schema.nfh.global/mob/) │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -63,7 +63,7 @@ Beckn Protocol v2.0 solves this with a **three-tier schema model** that separate
 | **Separation of concerns** | Transport, core data types, and domain extensions live in independent repositories with independent versioning. A change to `Address` doesn't touch the protocol envelope. |
 | **Domain-agnosticism** | Every schema in this repository must be meaningful across multiple industries. `Item` is a product in retail, a ride in mobility, a consultation in healthcare. No industry-specific attributes belong here. |
 | **Independent schema versioning** | Each schema has its own version directory (`v2.0/`, `v2.1/`, etc.). `Fulfillment` can release v2.1 while `Address` stays at v2.0. |
-| **Semantic grounding** | Every term maps to a globally unique IRI in the `beckn:` namespace (`https://schema.beckn.io/core/v2.0/`). `"address"` in a Beckn document is unambiguously `beckn:address` — not a plain string. |
+| **Semantic grounding** | Every term maps to a globally unique IRI in the `beckn:` namespace (`https://schema.nfh.global/core/v2.0/`). `"address"` in a Beckn document is unambiguously `beckn:address` — not a plain string. |
 | **OpenAPI 3.1 compatibility** | Every schema is a standalone, `$ref`-able OpenAPI 3.1 component. No schema registry or toolchain is required — just a URL. |
 | **Linked Data alignment** | Every schema is simultaneously valid JSON and valid RDF. Systems that don't know JSON-LD process it as plain JSON. Systems that do can build knowledge graphs, run SPARQL queries, and align with external ontologies. |
 
@@ -113,7 +113,7 @@ Reference the root context in any JSON-LD document to make all Beckn core terms 
 
 ```json
 {
-  "@context": "https://schema.beckn.io/core/v2.0/context.jsonld",
+  "@context": "https://schema.nfh.global/core/v2.0/context.jsonld",
   "@type": "Catalog",
   "descriptor": {
     "name": "Fresh Produce by Green Farms"
@@ -128,7 +128,7 @@ Reference the root context in any JSON-LD document to make all Beckn core terms 
 }
 ```
 
-When processed as JSON-LD, `"Catalog"` resolves to `https://schema.beckn.io/core/v2.0/Catalog`, making it unambiguous in any context — a database, a knowledge graph, or an API call.
+When processed as JSON-LD, `"Catalog"` resolves to `https://schema.nfh.global/core/v2.0/Catalog`, making it unambiguous in any context — a database, a knowledge graph, or an API call.
 
 ### 3. As an RDF Vocabulary
 
@@ -172,9 +172,9 @@ Domain packs extend the JSON-LD context with their own namespace, without overri
 ```json
 {
   "@context": [
-    "https://schema.beckn.io/core/v2.0/context.jsonld",
+    "https://schema.nfh.global/core/v2.0/context.jsonld",
     {
-      "mob": "https://schema.beckn.io/mobility/v1.0/",
+      "mob": "https://schema.nfh.global/mobility/v1.0/",
       "vehicleType": "mob:vehicleType",
       "seatingCapacity": "mob:seatingCapacity"
     }

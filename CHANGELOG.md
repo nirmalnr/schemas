@@ -10,7 +10,7 @@ This changelog follows the format: **Added**, **Changed**, **Deprecated**, **Rem
 
 **Initial release of the Beckn Protocol Core Schema v2.0.**
 
-This is the first versioned release of the core schema library, extracted and formalised from the Beckn Protocol v2.0 specification. The namespace for all schemas in this release is `https://schema.beckn.io/core/v2.0/`.
+This is the first versioned release of the core schema library, extracted and formalised from the Beckn Protocol v2.0 specification. The namespace for all schemas in this release is `https://schema.nfh.global/core/v2.0/`.
 
 ### Added
 
@@ -109,7 +109,7 @@ This is the first versioned release of the core schema library, extracted and fo
 - `UpdateAction` — Action object for update requests
 
 **Root JSON-LD artefacts:**
-- `schema/context.jsonld` — Unified JSON-LD context for all core schemas; namespace `https://schema.beckn.io/core/v2.0/`; `@protected: true`
+- `schema/context.jsonld` — Unified JSON-LD context for all core schemas; namespace `https://schema.nfh.global/core/v2.0/`; `@protected: true`
 - `schema/vocab.jsonld` — RDF vocabulary for all core schemas
 
 ### Deprecated

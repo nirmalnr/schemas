@@ -35,12 +35,12 @@ All Beckn Protocol Core Schema terms are assigned IRIs within the `beckn:` names
 | Property | Value |
 |---|---|
 | **Prefix** | `beckn:` |
-| **IRI** | `https://schema.beckn.io/core/v2.0/` |
-| **Example term** | `beckn:Address` → `https://schema.beckn.io/core/v2.0/Address` |
+| **IRI** | `https://schema.nfh.global/core/v2.0/` |
+| **Example term** | `beckn:Address` → `https://schema.nfh.global/core/v2.0/Address` |
 
 ### 2.2 Namespace Stability
 
-The namespace IRI MUST NOT change for the lifetime of a Major version. When a Major version increment occurs (e.g., v3.0), a new namespace IRI is introduced (`https://schema.beckn.io/core/v3.0/`), and the v2.0 namespace is frozen.
+The namespace IRI MUST NOT change for the lifetime of a Major version. When a Major version increment occurs (e.g., v3.0), a new namespace IRI is introduced (`https://schema.nfh.global/core/v3.0/`), and the v2.0 namespace is frozen.
 
 Within the v2.0 namespace, IRIs assigned to deprecated terms MUST be retained indefinitely to ensure backward compatibility with existing Linked Data graphs.
 
@@ -56,7 +56,7 @@ An implementor who references this document in a JSON-LD `@context` declaration 
 
 ```json
 {
-  "@context": "https://schema.beckn.io/core/v2.0/context.jsonld",
+  "@context": "https://schema.nfh.global/core/v2.0/context.jsonld",
   "@type": "Catalog",
   "descriptor": {
     "name": "My Catalog"
@@ -84,7 +84,7 @@ This protection ensures that the semantic integrity of core terms cannot be acci
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "beckn": "https://schema.beckn.io/core/v2.0/",
+    "beckn": "https://schema.nfh.global/core/v2.0/",
     "Address": "beckn:Address",
     "address": "beckn:address",
     ...
@@ -112,7 +112,7 @@ The root context MUST be updated whenever:
 ```json
 {
   "@context": {
-    "beckn": "https://schema.beckn.io/core/v2.0/",
+    "beckn": "https://schema.nfh.global/core/v2.0/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "owl": "http://www.w3.org/2002/07/owl#"
@@ -226,7 +226,7 @@ The simplest and most complete approach is to reference the root context by its 
 
 ```json
 {
-  "@context": "https://schema.beckn.io/core/v2.0/context.jsonld",
+  "@context": "https://schema.nfh.global/core/v2.0/context.jsonld",
   "@type": "Contract",
   "contractNumber": "ORD-12345",
   "consumer": {
@@ -277,7 +277,7 @@ Inline contexts are permitted by JSON-LD but SHOULD NOT be used in production Be
 
 The `@protected` flag in the root context prevents term hijacking by downstream consumers. Without it, a domain pack or consuming document could silently redefine a core term (e.g., redefine `"address"` to point to a different IRI), breaking semantic interoperability.
 
-Implementors SHOULD use a controlled document loader that resolves `https://schema.beckn.io/core/v2.0/context.jsonld` to a trusted local copy or CDN-hosted version, to avoid runtime dependency on external HTTP resolution.
+Implementors SHOULD use a controlled document loader that resolves `https://schema.nfh.global/core/v2.0/context.jsonld` to a trusted local copy or CDN-hosted version, to avoid runtime dependency on external HTTP resolution.
 
 ---
 

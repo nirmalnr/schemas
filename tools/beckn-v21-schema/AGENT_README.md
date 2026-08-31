@@ -128,8 +128,8 @@ to provide these unless the remote URLs are unavailable:
 |------|-----|
 | Core API spec (v2.1 draft) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/api/beckn.yaml` |
 | Core schema (`attributes.jsonschema.yaml`) | `https://raw.githubusercontent.com/beckn/protocol-specifications-v2/refs/heads/proposal/v2.1-generalized-core/schema/core/v2/attributes.jsonschema.yaml` |
-| Core `context.jsonld` | `https://schema.beckn.io/core/v2/context.jsonld` |
-| Core `vocab.jsonld` | `https://schema.beckn.io/core/v2/vocab.jsonld` |
+| Core `context.jsonld` | `https://schema.nfh.global/core/v2/context.jsonld` |
+| Core `vocab.jsonld` | `https://schema.nfh.global/core/v2/vocab.jsonld` |
 
 If any of these fail and the user has a local copy (e.g., `beckn-generalise-draft.yaml`),
 ask them to upload it before proceeding.
@@ -255,8 +255,8 @@ detect when a domain might need a different skill.
 | **International neutrality** | No hardcoded country/currency unless truly domain-specific; use `CodedValue` |
 | **One folder per top-level schema** | Each container attachment gets the full 7-file structure |
 | **Versioned folder** | All output lives under `v2.1/` inside the domain root |
-| **Per-schema namespace prefix** | e.g., `"djra": "https://schema.beckn.io/DriverJobResourceAttributes#"` — never a flat domain prefix |
-| **Generalised context import** | Always `"@import": "https://schema.beckn.io/core/v2/context.jsonld#generalised"` |
+| **Per-schema namespace prefix** | e.g., `"djra": "https://schema.nfh.global/DriverJobResourceAttributes#"` — never a flat domain prefix |
+| **Generalised context import** | Always `"@import": "https://schema.nfh.global/core/v2/context.jsonld#generalised"` |
 | **HTML templates mandatory** | `renderer.json` must include both `html` and `html_detail` Handlebars templates |
 | **Migration is never mechanical** | v2 → v2.1 always includes a paradigm fit review and user approval before file generation |
 | **No v1 direct migration** | v1 → v2.1 is always two-step: run `beckn-v2-schema` first, then this skill |
